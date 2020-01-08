@@ -7,7 +7,7 @@ var React = znui.React || require('react');
 var SVGIcon = require('znui-react-icon').SVGIcon;
 
 module.exports = React.createClass({
-  displayName: 'Button',
+  displayName: 'ZRButton',
   getDefaultProps: function getDefaultProps() {
     return {
       className: '',
@@ -25,6 +25,7 @@ module.exports = React.createClass({
       event.preventDefault();
     }
 
+    event.owner = this;
     this.props.onClick && this.props.onClick(event, this);
   },
   loading: function loading(value) {

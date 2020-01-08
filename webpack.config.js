@@ -26,7 +26,8 @@ module.exports = {
         "react": "React",
         "react-dom": "ReactDOM",
         "znui-react": "zr",
-        "znui-react-icon": "zri"
+        "znui-react-icon": "zri",
+        "znui-react-loader": "zrl"
     },
     output: {
         path: path.join(process.cwd(), 'dist'),

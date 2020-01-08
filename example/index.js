@@ -5,6 +5,7 @@ require('./index.less');
 var React = require('react');
 var ReactDOM = require('react-dom');
 var button = require('../src/index.js');
+console.log(button);
 ReactDOM.render(
     <div>
         <button.Button value="xx" icon="faPlus" status="danger" disabled={false} />
