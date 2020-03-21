@@ -38,14 +38,14 @@ module.exports = React.createClass({
       return null;
     }
 
-    return React.createElement("button", _extends({}, this.props, {
+    return /*#__PURE__*/React.createElement("button", _extends({}, this.props, {
       onClick: this.__click,
       className: znui.react.classname("zr-button", this.props.className, this.props.status, this.props.isActive ? "active" : ""),
       disabled: this.props.disabled || this.state.loading,
       "data-loading": this.state.loading
-    }), this.props.icon && React.createElement(SVGIcon, {
+    }), this.props.icon && /*#__PURE__*/React.createElement(SVGIcon, {
       icon: this.props.icon
-    }), this.props.value && React.createElement("span", {
+    }), this.props.value && /*#__PURE__*/React.createElement("span", {
       className: "value"
     }, this.props.value), this.props.children);
   }

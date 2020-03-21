@@ -24,7 +24,7 @@ module.exports = React.createClass({
   __itemRender: function __itemRender(item, index) {
     var _this = this;
 
-    return React.createElement(Button, _extends({}, item, {
+    return /*#__PURE__*/React.createElement(Button, _extends({}, item, {
       key: index,
       onClick: function onClick(event) {
         return _this.__itemClick(event, item, index);
@@ -42,15 +42,15 @@ module.exports = React.createClass({
     });
   },
   render: function render() {
-    return React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       className: znui.react.classname("zr-buttons", this.props.className),
       style: this.props.style
-    }, React.createElement(znui.react.DataView, {
+    }, /*#__PURE__*/React.createElement(znui.react.DataView, {
       data: this.props.data,
       itemRender: this.__itemRender,
       onLoading: this.__onLoading,
       onFinished: this.__onFinished
-    }), this.state.loading && React.createElement(loader.Loader, {
+    }), this.state.loading && /*#__PURE__*/React.createElement(loader.Loader, {
       content: "...",
       loader: "circle",
       size: "size-smail",
