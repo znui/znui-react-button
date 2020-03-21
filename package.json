@@ -1,8 +1,8 @@
 {
   "name": "znui-react-button",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Web button component.",
-  "main": "development.js",
+  "main": "index.js",
   "scripts": {
     "clean-example": "rimraf ./example/www",
     "clean-exports": "rimraf ./__/build/ && rimraf ./__/dist/",
