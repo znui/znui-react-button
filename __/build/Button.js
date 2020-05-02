@@ -1,7 +1,5 @@
 "use strict";
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 var React = znui.React || require('react');
 
 var SVGIcon = require('znui-react-icon').SVGIcon;
@@ -38,12 +36,13 @@ module.exports = React.createClass({
       return null;
     }
 
-    return /*#__PURE__*/React.createElement("button", _extends({}, this.props, {
+    return /*#__PURE__*/React.createElement("button", {
       onClick: this.__click,
       className: znui.react.classname("zr-button", this.props.className, this.props.status, this.props.isActive ? "active" : ""),
       disabled: this.props.disabled || this.state.loading,
-      "data-loading": this.state.loading
-    }), this.props.icon && /*#__PURE__*/React.createElement(SVGIcon, {
+      "data-loading": this.state.loading,
+      "data-focus": this.props.focus
+    }, this.props.icon && /*#__PURE__*/React.createElement(SVGIcon, {
       icon: this.props.icon
     }), this.props.value && /*#__PURE__*/React.createElement("span", {
       className: "value"
