@@ -1,4 +1,5 @@
 module.exports = {
     'Button': require('./Button'),
-    'Buttons': require('./Buttons')
+    'Buttons': require('./Buttons'),
+    'Tab': require('./Tab')
 };

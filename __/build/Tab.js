@@ -12,20 +12,24 @@ module.exports = React.createClass({
   displayName: 'ZRButtons',
   getInitialState: function getInitialState() {
     return {
-      loading: true
+      loading: true,
+      actived: null
     };
   },
   __itemClick: function __itemClick(event, item, index) {
     event.data = item;
     event.index = index;
     event.sender = this;
-    item.onClick && item.onClick(event, item, index);
+    this.setState({
+      actived: index
+    });
     this.props.onClick && this.props.onClick(event, this);
   },
   __itemRender: function __itemRender(item, index) {
     var _this = this;
 
     return /*#__PURE__*/React.createElement(Button, _extends({}, item, {
+      className: znui.react.classname(item.className, this.state.actived == index ? 'actived' : ''),
       key: index,
       onClick: function onClick(event) {
         return _this.__itemClick(event, item, index);
@@ -37,14 +41,22 @@ module.exports = React.createClass({
       loading: true
     });
   },
-  __onFinished: function __onFinished() {
-    this.setState({
+  __onFinished: function __onFinished(data) {
+    var _state = {
       loading: false
-    });
+    };
+
+    if (this.props.activeIndex != null && this.props.activeIndex < data.length) {
+      _state.actived = this.props.activeIndex;
+
+      this.__itemClick({}, data[this.props.activeIndex], this.props.activeIndex);
+    }
+
+    this.setState(_state);
   },
   render: function render() {
     return /*#__PURE__*/React.createElement("div", {
-      className: znui.react.classname("zr-buttons", this.props.className),
+      className: znui.react.classname("zr-tab", this.props.className),
       style: this.props.style
     }, /*#__PURE__*/React.createElement(znui.react.DataView, {
       data: this.props.data,

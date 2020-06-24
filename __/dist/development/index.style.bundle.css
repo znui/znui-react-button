@@ -1,6 +1,6 @@
 .zr-button {
   position: relative;
-  padding: 3px 6px;
+  padding: 3px 4px;
   text-align: center;
   border-radius: 3px;
   outline: none;
@@ -11,9 +11,10 @@
   border: 1px solid transparent;
   background-color: transparent;
   color: transparent;
-  line-height: 15px;
-  font-size: 15px;
-  height: 26px;
+  font-size: 14px;
+}
+.zr-button .svg-inline--fa {
+  font-size: 10px;
 }
 .zr-button[data-focus="true"] {
   box-shadow: 0 0 10px #dcd2d2;
@@ -56,7 +57,7 @@
   box-shadow: 0 0 0 2px rgba(49, 47, 47, 0.2);
 }
 .zr-button .value {
-  margin: 0px 5px;
+  margin: 0px 3px;
 }
 .zr-button.black {
   background-color: #3d3d3d;
@@ -141,6 +142,41 @@
   margin-right: 0px;
 }
 .zr-buttons .zr-loader {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.zr-tab {
+  position: relative;
+}
+.zr-tab .zr-button {
+  margin: 0px;
+  border-radius: 0px;
+  background-color: #fdf6f6;
+  border-color: #e0d9d9;
+  color: #6f6c6c;
+  margin-left: -1px;
+  min-width: 60px;
+}
+.zr-tab .zr-button:first-child {
+  border-radius: 3px 0px 0px 3px;
+  margin-left: 0px;
+}
+.zr-tab .zr-button:last-child {
+  border-radius: 0px 3px 3px 0px;
+}
+.zr-tab .zr-button:active {
+  color: #17a4db;
+}
+.zr-tab .zr-button.actived {
+  background-color: #e4dddd;
+  color: #2c89e8;
+}
+.zr-tab .zr-loader {
   position: absolute;
   top: 0px;
   left: 0px;

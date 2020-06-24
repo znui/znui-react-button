@@ -17,5 +17,12 @@ znui.react.createApplication({
             {value: 'test3', icon: 'faPlus', status: 'success'},
             {value: 'test4', icon: 'faPlus', status: 'success'}
         ]} />
+        <button.Tab data={[
+            {value: 'test', icon: 'faPlus'},
+            {value: 'test1', icon: 'faPlus'},
+            {value: 'test2', icon: 'faPlus'},
+            {value: 'test3', icon: 'faPlus'},
+            {value: 'test4', icon: 'faPlus'}
+        ]} activeIndex={0} onClick={(event)=>console.log(event)} />
     </div>
 });
