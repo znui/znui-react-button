@@ -30,11 +30,12 @@ module.exports = React.createClass({
 		if(this.props.isHidden){
 			return null;
 		}
+		var _value = this.props.value || this.props.label;
 		return (
 			<button onClick={this.__click} className={znui.react.classname("zr-button", this.props.className, this.props.status, (this.props.isActive?"active":""))} disabled={this.props.disabled||this.state.loading} data-loading={this.state.loading} data-focus={this.props.focus}>
-				{this.props.icon && <SVGIcon icon={this.props.icon} />}
-				{this.props.value && <span className="value">{this.props.value}</span>}
-				{this.props.children}
+				{ this.props.icon && <SVGIcon icon={this.props.icon} /> }
+				{ !!_value && <span className="value">{_value}</span> }
+				{ this.props.children }
 			</button>
 		);
 	}

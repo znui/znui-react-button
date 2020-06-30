@@ -36,6 +36,8 @@ module.exports = React.createClass({
       return null;
     }
 
+    var _value = this.props.value || this.props.label;
+
     return /*#__PURE__*/React.createElement("button", {
       onClick: this.__click,
       className: znui.react.classname("zr-button", this.props.className, this.props.status, this.props.isActive ? "active" : ""),
@@ -44,8 +46,8 @@ module.exports = React.createClass({
       "data-focus": this.props.focus
     }, this.props.icon && /*#__PURE__*/React.createElement(SVGIcon, {
       icon: this.props.icon
-    }), this.props.value && /*#__PURE__*/React.createElement("span", {
+    }), !!_value && /*#__PURE__*/React.createElement("span", {
       className: "value"
-    }, this.props.value), this.props.children);
+    }, _value), this.props.children);
   }
 });
