@@ -43,7 +43,8 @@ module.exports = React.createClass({
       className: znui.react.classname("zr-button", this.props.className, this.props.status, this.props.isActive ? "active" : ""),
       disabled: this.props.disabled || this.state.loading,
       "data-loading": this.state.loading,
-      "data-focus": this.props.focus
+      "data-focus": this.props.focus,
+      style: this.props.style
     }, this.props.icon && /*#__PURE__*/React.createElement(SVGIcon, {
       icon: this.props.icon
     }), !!_value && /*#__PURE__*/React.createElement("span", {
