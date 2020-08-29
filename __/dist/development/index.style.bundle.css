@@ -16,6 +16,10 @@
 .zr-button .svg-inline--fa {
   font-size: 10px;
 }
+.zr-button .icon {
+  width: 13px;
+  height: 13px;
+}
 .zr-button[data-focus="true"] {
   box-shadow: 0 0 10px #dcd2d2;
   -webkit-animation-name: shineRed;

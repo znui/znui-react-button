@@ -2,8 +2,6 @@
 
 var React = znui.React || require('react');
 
-var SVGIcon = require('znui-react-icon').SVGIcon;
-
 module.exports = React.createClass({
   displayName: 'ZRButton',
   getDefaultProps: function getDefaultProps() {
@@ -45,9 +43,11 @@ module.exports = React.createClass({
       "data-loading": this.state.loading,
       "data-focus": this.props.focus,
       style: this.props.style
-    }, this.props.icon && /*#__PURE__*/React.createElement(SVGIcon, {
-      icon: this.props.icon
-    }), !!_value && /*#__PURE__*/React.createElement("span", {
+    }, this.props.icon && /*#__PURE__*/React.createElement("span", {
+      className: "icon"
+    }, /*#__PURE__*/React.createElement("i", {
+      className: "fa " + this.props.icon
+    })), !!_value && /*#__PURE__*/React.createElement("span", {
       className: "value"
     }, _value), this.props.children);
   }

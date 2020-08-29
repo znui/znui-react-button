@@ -1,6 +1,6 @@
 {
   "name": "znui-react-button",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "Web button component.",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,6 @@
   "license": "MIT",
   "dependencies": {
     "znui-react": "latest",
-    "znui-react-icon": "latest",
     "znui-react-loader": "latest"
   }
 }
