@@ -1,5 +1,7 @@
 .zr-button {
   position: relative;
+  display: flex;
+  align-items: center;
   padding: 3px 4px;
   text-align: center;
   border-radius: 3px;
@@ -135,6 +137,7 @@
 }
 .zr-buttons {
   position: relative;
+  display: flex;
 }
 .zr-buttons .zr-button {
   margin: 3px;
@@ -156,6 +159,8 @@
 }
 .zr-tab {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .zr-tab .zr-button {
   margin: 0px;

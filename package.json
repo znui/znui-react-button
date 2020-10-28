@@ -1,6 +1,6 @@
 {
   "name": "znui-react-button",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "description": "Web button component.",
   "main": "index.js",
   "scripts": {
