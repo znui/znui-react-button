@@ -9,12 +9,17 @@ module.exports = React.createClass({
 			actived: null
 		};
 	},
-	__itemClick: function (event, item, index){
+	__itemClick: function (event, item, index, fireClick){
 		event.data = item;
 		event.index = index;
 		event.sender = this;
-		this.setState({ actived: index });
-		this.props.onClick && this.props.onClick(event, this);
+		this.setState({ 
+			actived: index, 
+			loading: false
+		});
+		if(fireClick !== false) {
+			this.props.onClick && this.props.onClick(event, this);
+		}
 	},
 	__itemRender: function (item, index){
 		return <Button {...item} className={znui.react.classname(item.className, (this.state.actived==index?'actived':''))} key={index} onClick={(event)=>this.__itemClick(event, item, index)} />
@@ -25,14 +30,14 @@ module.exports = React.createClass({
 		});
 	},
 	__onFinished: function (data){
-		var _state = {
-			loading: false
-		};
 		if(this.props.activeIndex!=null && this.props.activeIndex < data.length) {
-			_state.actived = this.props.activeIndex;
-			this.__itemClick({}, data[this.props.activeIndex], this.props.activeIndex);
+			this.__itemClick({}, data[this.props.activeIndex], this.props.activeIndex, this.props.fireActive);
+			return;
 		}
-		this.setState(_state);
+
+		this.setState({
+			loading: false
+		});
 	},
 	render:function(){
 		return (

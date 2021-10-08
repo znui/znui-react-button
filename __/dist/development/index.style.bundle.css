@@ -1,10 +1,11 @@
 .zr-button {
   position: relative;
-  display: flex;
-  align-items: center;
+  /*
+    display: flex;
+    align-items: center;*/
   padding: 3px 4px;
   text-align: center;
-  border-radius: 3px;
+  border-radius: 1px;
   outline: none;
   box-sizing: border-box;
   -webkit-transition: all ease-in-out 0.15s;
@@ -21,6 +22,7 @@
 .zr-button .icon {
   width: 13px;
   height: 13px;
+  display: inline-flex;
 }
 .zr-button[data-focus="true"] {
   box-shadow: 0 0 10px #dcd2d2;
@@ -57,13 +59,14 @@
   opacity: 0.8;
 }
 .zr-button:enabled:active {
+  z-index: 100;
   border-color: #cdcecf;
   border-right-width: 1px !important;
   -webkit-box-shadow: 0 0 0 2px rgba(49, 47, 47, 0.2);
   box-shadow: 0 0 0 2px rgba(49, 47, 47, 0.2);
 }
 .zr-button .value {
-  margin: 0px 3px;
+  margin: 0px 5px;
 }
 .zr-button.black {
   background-color: #3d3d3d;

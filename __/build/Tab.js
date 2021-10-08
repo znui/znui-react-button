@@ -16,14 +16,18 @@ module.exports = React.createClass({
       actived: null
     };
   },
-  __itemClick: function __itemClick(event, item, index) {
+  __itemClick: function __itemClick(event, item, index, fireClick) {
     event.data = item;
     event.index = index;
     event.sender = this;
     this.setState({
-      actived: index
+      actived: index,
+      loading: false
     });
-    this.props.onClick && this.props.onClick(event, this);
+
+    if (fireClick !== false) {
+      this.props.onClick && this.props.onClick(event, this);
+    }
   },
   __itemRender: function __itemRender(item, index) {
     var _this = this;
@@ -42,17 +46,15 @@ module.exports = React.createClass({
     });
   },
   __onFinished: function __onFinished(data) {
-    var _state = {
-      loading: false
-    };
-
     if (this.props.activeIndex != null && this.props.activeIndex < data.length) {
-      _state.actived = this.props.activeIndex;
+      this.__itemClick({}, data[this.props.activeIndex], this.props.activeIndex, this.props.fireActive);
 
-      this.__itemClick({}, data[this.props.activeIndex], this.props.activeIndex);
+      return;
     }
 
-    this.setState(_state);
+    this.setState({
+      loading: false
+    });
   },
   render: function render() {
     return /*#__PURE__*/React.createElement("div", {

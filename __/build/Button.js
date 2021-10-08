@@ -22,6 +22,17 @@ module.exports = React.createClass({
     }
 
     event.owner = this;
+
+    if (this.props.hash) {
+      var _hash = this.props.hash;
+
+      if (_hash.charAt(0) != '#') {
+        _hash = '#' + _hash;
+      }
+
+      window.location.hash = _hash;
+    }
+
     this.props.onClick && this.props.onClick(event, this);
   },
   loading: function loading(value) {
@@ -42,7 +53,9 @@ module.exports = React.createClass({
       disabled: this.props.disabled || this.state.loading,
       "data-loading": this.state.loading,
       "data-focus": this.props.focus,
-      style: this.props.style
+      style: znui.react.style(this.props.style, {
+        color: this.props.color
+      })
     }, this.props.icon && /*#__PURE__*/React.createElement("span", {
       className: "icon"
     }, /*#__PURE__*/React.createElement("i", {
