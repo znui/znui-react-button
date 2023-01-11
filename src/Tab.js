@@ -22,7 +22,11 @@ module.exports = React.createClass({
 		}
 	},
 	__itemRender: function (item, index){
-		return <Button {...item} className={znui.react.classname(item.className, (this.state.actived==index?'actived':''))} key={index} onClick={(event)=>this.__itemClick(event, item, index)} />
+		var _actived = this.props.onItemActived && this.props.onItemActived(item, index);
+		if(_actived === null || _actived === undefined) {
+			_actived = this.state.actived == index;
+		}
+		return <Button {...item} className={znui.react.classname(item.className, (_actived?'actived':''))} key={index} onClick={(event)=>this.__itemClick(event, item, index)} />
 	},
 	__onLoading: function (){
 		this.setState({

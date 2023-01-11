@@ -32,8 +32,14 @@ module.exports = React.createClass({
   __itemRender: function __itemRender(item, index) {
     var _this = this;
 
+    var _actived = this.props.onItemActived && this.props.onItemActived(item, index);
+
+    if (_actived === null || _actived === undefined) {
+      _actived = this.state.actived == index;
+    }
+
     return /*#__PURE__*/React.createElement(Button, _extends({}, item, {
-      className: znui.react.classname(item.className, this.state.actived == index ? 'actived' : ''),
+      className: znui.react.classname(item.className, _actived ? 'actived' : ''),
       key: index,
       onClick: function onClick(event) {
         return _this.__itemClick(event, item, index);

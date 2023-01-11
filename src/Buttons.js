@@ -16,7 +16,7 @@ module.exports = React.createClass({
 		this.props.onClick && this.props.onClick(event, this);
 	},
 	__itemRender: function (item, index){
-		return <Button {...item} key={index} onClick={(event)=>this.__itemClick(event, item, index)} />
+		return <Button {...item} key={index} onClick={(evt, btn)=>this.__itemClick(evt, item, index)} />
 	},
 	__onLoading: function (){
 		this.setState({

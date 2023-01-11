@@ -1,4 +1,5 @@
 var React = znui.React || require('react');
+var Loading = require('./Loading.js');
 
 module.exports = React.createClass({
 	displayName: 'ZRButton',
@@ -10,13 +11,14 @@ module.exports = React.createClass({
 	},
 	getInitialState: function() {
 		return {
-			loading: false
+			loading: this.props.loading || false
 		}
 	},
 	__click: function (event){
 		if(this.props.disabled){
 			event.preventDefault();
 		}
+		event.button = this;
 		event.owner = this;
 		if(this.props.hash) {
 			var _hash = this.props.hash;

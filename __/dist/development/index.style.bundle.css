@@ -1,9 +1,8 @@
 .zr-button {
   position: relative;
-  /*
-    display: flex;
-    align-items: center;*/
-  padding: 3px 4px;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
   text-align: center;
   border-radius: 1px;
   outline: none;
@@ -14,7 +13,12 @@
   border: 1px solid transparent;
   background-color: transparent;
   color: transparent;
-  font-size: 14px;
+  font-size: 13px;
+}
+.zr-button.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .zr-button .svg-inline--fa {
   font-size: 10px;
@@ -168,7 +172,7 @@
 .zr-tab .zr-button {
   margin: 0px;
   border-radius: 0px;
-  background-color: #fdf6f6;
+  background-color: #fffbfb;
   border-color: #e0d9d9;
   color: #6f6c6c;
   margin-left: -1px;
@@ -183,11 +187,13 @@
   margin-left: -2px;
 }
 .zr-tab .zr-button:active {
-  color: #17a4db;
+  color: #ffb580;
 }
 .zr-tab .zr-button.actived {
-  background-color: #e4dddd;
-  color: #2c89e8;
+  color: #ff7d21;
+  font-weight: bolder;
+  background-color: #ffffff;
+  text-shadow: 1px 1px #f7f4f4, -1px -1px #e5dfdf;
 }
 .zr-tab .zr-loader {
   position: absolute;
@@ -197,6 +203,46 @@
   height: 100%;
   margin: 0px !important;
   padding: 0px !important;
+}
+.zr-button-loading {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.zr-button-loading .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.zr-button-loading .lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #908c8c transparent transparent transparent;
+}
+.zr-button-loading .lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.zr-button-loading .lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.zr-button-loading .lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2Rpc3QvZGV2ZWxvcG1lbnQvaW5kZXguc3R5bGUuYnVuZGxlLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/

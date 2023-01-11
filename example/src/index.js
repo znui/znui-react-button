@@ -6,8 +6,8 @@ var button = require('../../src/index');
 
 znui.react.createApplication({
     render: <div>
-        <button.Button value="xx" icon="fa-plus" status="danger" disabled={false} />
-        <button.Button value="xx" icon="faPlus" status="success" disabled={false} />
+        <button.Button value="xx" icon="fa-plus" status="danger" disabled={true} />
+        <button.Button value="xx" icon="faPlus" status="success" loading={true} />
         <button.Button value="xx" icon="faPlus" status="primary" disabled={false} />
         <button.Button value="xx" icon="faPlus" disabled={true} />
         <button.Buttons data={[

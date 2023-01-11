@@ -27,8 +27,8 @@ module.exports = React.createClass({
 
     return /*#__PURE__*/React.createElement(Button, _extends({}, item, {
       key: index,
-      onClick: function onClick(event) {
-        return _this.__itemClick(event, item, index);
+      onClick: function onClick(evt, btn) {
+        return _this.__itemClick(evt, item, index);
       }
     }));
   },
