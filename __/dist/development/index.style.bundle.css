@@ -70,7 +70,7 @@
   box-shadow: 0 0 0 2px rgba(49, 47, 47, 0.2);
 }
 .zr-button .value {
-  margin: 0px 5px;
+  margin: 0px 2px;
 }
 .zr-button.black {
   background-color: #3d3d3d;
@@ -172,9 +172,11 @@
 .zr-tab .zr-button {
   margin: 0px;
   border-radius: 0px;
-  background-color: #fffbfb;
-  border-color: #e0d9d9;
-  color: #6f6c6c;
+  /*background-color: #fffbfb;*/
+  /*border-color: #e0d9d9;*/
+  background-color: #f7f6f6;
+  border-color: #dbdbdb;
+  color: #6c6c6c;
   margin-left: -1px;
   min-width: 60px;
 }

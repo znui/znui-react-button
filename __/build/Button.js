@@ -48,7 +48,7 @@ module.exports = React.createClass({
       return null;
     }
 
-    var _value = this.props.value || this.props.label;
+    var _value = this.props.label || this.props.text || this.props.value;
 
     return /*#__PURE__*/React.createElement("button", {
       onClick: this.__click,
@@ -59,11 +59,9 @@ module.exports = React.createClass({
       style: znui.react.style(this.props.style, {
         color: this.props.color
       })
-    }, this.props.icon && /*#__PURE__*/React.createElement("span", {
-      className: "icon"
-    }, /*#__PURE__*/React.createElement("i", {
-      className: "fa " + this.props.icon
-    })), !!_value && /*#__PURE__*/React.createElement("span", {
+    }, this.props.icon && /*#__PURE__*/React.createElement("i", {
+      className: "icon fa " + this.props.icon
+    }), !!_value && /*#__PURE__*/React.createElement("span", {
       className: "value"
     }, _value), this.props.children);
   }
